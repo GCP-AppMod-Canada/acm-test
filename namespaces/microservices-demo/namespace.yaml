@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: microservices-demo
+  labels:
+    owner: John Doe <johndoe@email.com>
