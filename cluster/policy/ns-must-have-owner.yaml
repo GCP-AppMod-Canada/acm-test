@@ -2,7 +2,6 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sRequiredLabels
 metadata:
   name: ns-must-have-geo
-  namespace: policy
 spec:
   match:
     kinds:
