@@ -1,0 +1,10 @@
+apiVersion: configsync.gke.io/v1alpha1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  git:
+    syncRepo: git@github.com:GCP-AppMod-Canada/acm-test.git
+    syncBranch: base-app
+    secretType: ssh

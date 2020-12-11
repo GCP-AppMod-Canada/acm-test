@@ -1,0 +1,11 @@
+apiVersion: configsync.gke.io/v1alpha1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: microservices-demo
+spec:
+  git:
+   repo: git@github.com:GoogleCloudPlatform/microservices-demo.git
+   branch: master
+   dir: "deploy"
+   auth: none
