@@ -5,7 +5,9 @@ metadata:
   namespace: microservices-demo
 spec:
   git:
-   repo: git@github.com:GoogleCloudPlatform/microservices-demo.git
+   repo: git@github.com:cartyc/microservices-demo.git
    branch: master
    dir: "release"
-   auth: none
+   auth: ssh
+   secretRef:
+     name: test
