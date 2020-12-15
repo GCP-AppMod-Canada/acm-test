@@ -6,7 +6,7 @@ metadata:
 spec:
   git:
    repo: git@github.com:cartyc/microservices-demo.git
-   branch: master
+   branch: main
    dir: "release"
    auth: ssh
    secretRef:
