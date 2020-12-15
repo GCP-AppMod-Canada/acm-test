@@ -9,3 +9,5 @@ spec:
    branch: master
    dir: "deploy"
    auth: none
+   secretRef:
+     name: test
