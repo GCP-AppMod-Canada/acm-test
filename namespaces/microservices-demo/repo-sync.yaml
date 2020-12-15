@@ -7,7 +7,5 @@ spec:
   git:
    repo: git@github.com:GoogleCloudPlatform/microservices-demo.git
    branch: master
-   dir: "deploy"
+   dir: "release"
    auth: none
-   secretRef:
-     name: test
