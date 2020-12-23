@@ -7,7 +7,7 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo"]
+    excludedNamespaces: ["microservices-demo","istio-system"]
   parameters:
     runAsUser:
       rule: MustRunAsNonRoot # MustRunAsNonRoot # RunAsAny 
