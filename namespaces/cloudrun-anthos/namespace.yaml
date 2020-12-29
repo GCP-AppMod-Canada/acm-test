@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: cloudrun-anthos
   labels:
-    owner: johndoe@email.com
+    owner: johndoe
