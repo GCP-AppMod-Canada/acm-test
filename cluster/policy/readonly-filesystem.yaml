@@ -7,4 +7,4 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo", "istio-system","gke-system"]
+    excludedNamespaces: ["microservices-demo", "istio-system","gke-system", "cloudrun-anthos"]
