@@ -1,11 +1,11 @@
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPReadOnlyRootFilesystem
-metadata:
-  name: psp-readonlyrootfilesystem
-spec:
-  enforcementAction: dryrun
-  match:
-    kinds:
-      - apiGroups: [""]
-        kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo", "istio-system","gke-system", "cloudrun-anthos"]
+# apiVersion: constraints.gatekeeper.sh/v1beta1
+# kind: K8sPSPReadOnlyRootFilesystem
+# metadata:
+#   name: psp-readonlyrootfilesystem
+# spec:
+#   enforcementAction: dryrun
+#   match:
+#     kinds:
+#       - apiGroups: [""]
+#         kinds: ["Pod"]
+#     excludedNamespaces: ["microservices-demo", "istio-system","gke-system", "cloudrun-anthos"]
