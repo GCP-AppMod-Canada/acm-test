@@ -3,6 +3,7 @@ kind: K8sRequiredLabels
 metadata:
   name: ns-must-have-geo
 spec:
+  enforcementAction: dryrun
   match:
     kinds:
       - apiGroups: [""]
