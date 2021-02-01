@@ -1,13 +1,14 @@
-# apiVersion: constraints.gatekeeper.sh/v1beta1
-# kind: K8sAllowedRepos
-# metadata:
-#   name: allowed-repos
-# spec:
-#   match:
-#     kinds:
-#       - apiGrounds: [""]
-#         kinds: ["Pods"]
-#     excludedNamespaces: ["microservices-demo"]
-#   parameters:
-#     repos:
-#       - "gcr.io"
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: allowed-repos
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGrounds: [""]
+        kinds: ["Pods"]
+    excludedNamespaces: ["microservices-demo"]
+  parameters:
+    repos:
+      - "gcr.io"
