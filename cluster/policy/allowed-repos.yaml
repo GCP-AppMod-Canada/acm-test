@@ -3,6 +3,7 @@ kind: K8sAllowedRepos
 metadata:
   name: allowed-repos
 spec:
+  enforcementAction: deny
   match:
     kinds:
       - apiGrounds: [""]

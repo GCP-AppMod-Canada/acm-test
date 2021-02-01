@@ -3,6 +3,7 @@ kind: K8sPSPReadOnlyRootFilesystem
 metadata:
   name: psp-readonlyrootfilesystem
 spec:
+  enforcementAction: deny
   match:
     kinds:
       - apiGroups: [""]

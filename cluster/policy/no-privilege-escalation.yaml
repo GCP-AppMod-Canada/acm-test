@@ -3,6 +3,7 @@ kind: K8sPSPPrivilegedContainer
 metadata:
   name: no-privilege-escalation
 spec:
+  enforcementAction: deny
   match:
     kinds:
       - apiGroups: [""]
