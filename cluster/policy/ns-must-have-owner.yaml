@@ -1,14 +1,14 @@
-# apiVersion: constraints.gatekeeper.sh/v1beta1
-# kind: K8sRequiredLabels
-# metadata:
-#   name: ns-must-have-geo
-# spec:
-#   enforcementAction: dryrun
-#   match:
-#     kinds:
-#       - apiGroups: [""]
-#         kinds: ["Namespace"]
-#     excludedNamespaces: ["istio-system", "gke-system", "knative-serving","knative-eventing","cloud-run-events","cloud-run-system"]
-#   parameters:
-#     labels:
-#       - key: "owner"
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredLabels
+metadata:
+  name: ns-must-have-geo
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Namespace"]
+    excludedNamespaces: ["istio-system", "gke-system", "knative-serving","knative-eventing","cloud-run-events","cloud-run-system"]
+  parameters:
+    labels:
+      - key: "owner"

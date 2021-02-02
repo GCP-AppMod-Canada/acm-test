@@ -1,14 +1,14 @@
-# apiVersion: constraints.gatekeeper.sh/v1beta1
-# kind: K8sPSPAllowedUsers
-# metadata:
-#   name: psp-pods-allowed-user-ranges
-# spec:
-#   enforcementAction: dryrun
-#   match:
-#     kinds:
-#       - apiGroups: [""]
-#         kinds: ["Pod"]
-#     excludedNamespaces: ["microservices-demo","istio-system","gke-system", "cloudrun-anthos"]
-#   parameters:
-#     runAsUser:
-#       rule: MustRunAsNonRoot # MustRunAsNonRoot # RunAsAny 
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPAllowedUsers
+metadata:
+  name: psp-pods-allowed-user-ranges
+spec:
+  enforcementAction: dryrun
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+    excludedNamespaces: ["microservices-demo","istio-system","gke-system", "cloudrun-anthos"]
+  parameters:
+    runAsUser:
+      rule: MustRunAsNonRoot # MustRunAsNonRoot # RunAsAny 
