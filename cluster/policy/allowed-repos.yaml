@@ -7,7 +7,7 @@ spec:
   match:
     kinds:
       - apiGrounds: [""]
-        kinds: ["Pods"]
+        kinds: ["Pod"]
     excludedNamespaces: ["microservices-demo"]
   parameters:
     repos:
