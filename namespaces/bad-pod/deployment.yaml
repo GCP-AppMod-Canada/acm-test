@@ -4,8 +4,6 @@ kind: Deployment
 metadata:
   name: myhello-world-app
   namespace: bad-pod
-  annotations:
-    flux.weave.works/automated: "true"
 spec:
   selector:
     matchLabels:
