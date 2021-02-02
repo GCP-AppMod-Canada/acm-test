@@ -6,7 +6,7 @@ spec:
   enforcementAction: deny
   match:
     kinds:
-      - apiGrounds: [""]
+      - apiGroups: [""]
         kinds: ["Pod"]
     excludedNamespaces: ["microservices-demo"]
   parameters:
