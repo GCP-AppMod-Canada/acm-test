@@ -3,7 +3,7 @@ kind: K8sAllowedRepos
 metadata:
   name: allowed-repos
 spec:
-  enforcementAction: deny
+  enforcementAction: dryrun
   match:
     kinds:
       - apiGroups: [""]
