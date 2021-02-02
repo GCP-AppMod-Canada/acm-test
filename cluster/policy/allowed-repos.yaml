@@ -6,9 +6,11 @@ spec:
   enforcementAction: deny
   match:
     kinds:
-      - apiGrounds: [""]
+      - apiGroups: [""]
         kinds: ["Pods"]
     excludedNamespaces: ["microservices-demo"]
   parameters:
     repos:
       - "gcr.io"
+      - "k8s.gcr.io"
+      - "gke.gcr.io"
