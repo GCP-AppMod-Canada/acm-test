@@ -4,3 +4,4 @@ metadata:
   name: microservices-demo
   labels:
     owner: John-Doe
+    istio.io/rev: asm-176-1
