@@ -3,7 +3,7 @@ kind: K8sAllowedRepos
 metadata:
   name: allowed-repos
   annotations:
-    configmanagement.gke.io/cluster-selector: selector-env-prod  
+    configmanagement.gke.io/cluster-selector: selector-env-dev  
 spec:
   enforcementAction: dryrun
   match:
