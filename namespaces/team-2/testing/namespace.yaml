@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: team-2-test
+  name: testing
   labels:
     owner: John-Doe
