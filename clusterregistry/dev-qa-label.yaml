@@ -1,6 +1,6 @@
 kind: Cluster
 apiVersion: clusterregistry.k8s.io/v1alpha1
 metadata:
-  name: qa-cluster
+  name: gke-hub-membership-bee-dev-974
   labels:
-    environment: qa
+    environment: dev
