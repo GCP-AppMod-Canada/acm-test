@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: team-2-test
+  labels:
+    owner: John-Doe
