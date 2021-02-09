@@ -2,6 +2,8 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sUniqueIngressHost
 metadata:
   name: unique-ingress-host
+  annotations:
+    configmanagement.gke.io/cluster-selector: selector-env-prod
 spec:
   enforcementAction: dryrun
   match:

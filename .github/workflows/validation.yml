@@ -33,4 +33,4 @@ jobs:
           sudo apt-get update && sudo apt-get install google-cloud-sdk
           gsutil cp gs://config-management-release/released/1.6.0/linux_amd64/nomos nomos
           chmod +x nomos
-          nomos vet
+          ./nomos vet
