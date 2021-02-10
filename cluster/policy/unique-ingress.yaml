@@ -3,7 +3,7 @@ kind: K8sUniqueIngressHost
 metadata:
   name: unique-ingress-host
 spec:
-  enforcementAction: dryrun
+  enforcementAction: deny
   match:
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]
