@@ -1,7 +1,7 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: microservices-demo
+  name: team-1
   labels:
     owner: John-Doe
     istio.io/rev: asm-176-1
