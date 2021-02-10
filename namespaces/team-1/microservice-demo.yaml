@@ -20,7 +20,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: emailservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -64,7 +64,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: emailservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -78,7 +78,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: checkoutservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -135,7 +135,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: checkoutservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -149,7 +149,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: recommendationservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -196,7 +196,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: recommendationservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -210,7 +210,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -281,7 +281,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -295,7 +295,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend-external
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: LoadBalancer
   selector:
@@ -309,7 +309,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: paymentservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -347,7 +347,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: paymentservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -361,7 +361,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -407,7 +407,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: productcatalogservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -421,7 +421,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cartservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -466,7 +466,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cartservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -480,7 +480,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadgenerator
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -516,7 +516,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: currencyservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -561,7 +561,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: currencyservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -575,7 +575,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -620,7 +620,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shippingservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -634,7 +634,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: redis-cart
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
@@ -675,7 +675,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: redis-cart
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
@@ -689,7 +689,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: adservice
-  namespace: microservices-demo 
+  namespace: team-1
 spec:
   selector:
     matchLabels:
