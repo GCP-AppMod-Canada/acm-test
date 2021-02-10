@@ -737,7 +737,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: adservice
-  namespace: microservices-demo
+  namespace: team-1
 spec:
   type: ClusterIP
   selector:
