@@ -9,4 +9,5 @@ validate:
     entrypoint:
       - ""                          # Override default entrypoint.
   script:
+    - ls
     - nomos vet
