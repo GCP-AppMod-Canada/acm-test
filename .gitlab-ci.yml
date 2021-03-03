@@ -1,0 +1,12 @@
+
+stages:
+  - validate
+
+validate:
+  stage: validate
+  image:
+    name: gcr.io/config-management-release/nomos:stable
+    entrypoint:
+      - ""                          # Override default entrypoint.
+  script:
+    - nomos vet
