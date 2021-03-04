@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: microservices-demo-bad
+  name: dev
   labels:
     owner: John-Doe

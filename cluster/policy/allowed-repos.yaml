@@ -2,6 +2,8 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sAllowedRepos
 metadata:
   name: allowed-repos
+  annotations:
+    configmanagement.gke.io/cluster-selector: selector-env-dev  
 spec:
   enforcementAction: dryrun
   match:
