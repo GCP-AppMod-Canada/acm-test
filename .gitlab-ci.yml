@@ -8,6 +8,7 @@ validate:
     name: gcr.io/config-management-release/nomos:stable
     entrypoint:
       - ""                          # Override default entrypoint.
+  variables:
+    KUBECONFIG: ""
   script:
-    - ls
-    - nomos vet
+    - nomos vet --no-api-server-check  
