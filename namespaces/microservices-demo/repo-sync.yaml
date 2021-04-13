@@ -1,9 +1,10 @@
-apiVersion: configsync.gke.io/v1alpha1
+apiVersion: configsync.gke.io/v1beta1
 kind: RepoSync
 metadata:
   name: repo-sync
   namespace: microservices-demo
 spec:
+  sourceFormat: unstructured
   git:
    repo: git@github.com:cartyc/microservices-demo.git
    branch: main
