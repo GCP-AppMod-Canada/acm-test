@@ -11,3 +11,27 @@
    kind: ClusterRole
    name: edit
    apiGroup: rbac.authorization.k8s.io
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: istio-services
+  namespace: microservices-demo-bad
+rules:
+  - apiGroups: ["networking.istio.io"]
+    resources: ["*"]
+    verbs: ["get","list","create","delete","patch"]
+---
+ kind: RoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: syncs-repo-istio
+   namespace: microservices-demo-bad
+ subjects:
+ - kind: ServiceAccount
+   name: ns-reconciler-microservices-demo-bad
+   namespace: config-management-system
+ roleRef:
+   kind: Role
+   name: istio-services
+   apiGroup: rbac.authorization.k8s.io
