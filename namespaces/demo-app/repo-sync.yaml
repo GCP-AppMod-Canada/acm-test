@@ -8,6 +8,6 @@ spec:
   sourceFormat: unstructured
   git:
    repo: https://github.com/cartyc/hello-k8s-deployment.git 
-   branch: main
+   branch: anthos-acm
    dir: "deploy"
    auth: none
