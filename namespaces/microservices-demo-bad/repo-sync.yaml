@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: microservices-demo-bad
+spec:
+  # Since this is for a namespace repository, the format should be unstructured
+  sourceFormat: unstructured
+  git:
+   repo: https://github.com/GoogleCloudPlatform/microservices-demo.git 
+   branch: master
+   dir: "release"
+   auth: none
