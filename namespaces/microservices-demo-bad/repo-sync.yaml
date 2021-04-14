@@ -1,4 +1,4 @@
-apiVersion: configsync.gke.io/v1beta1
+apiVersion: configsync.gke.io/v1alpha1
 kind: RepoSync
 metadata:
   name: repo-sync
