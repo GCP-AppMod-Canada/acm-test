@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myhello-world-app
+  namespace: demo-app
+  annotations:
+    flux.weave.works/automated: "true"
+spec:
+  selector:
+    matchLabels:
+      app: hello-k8s
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+      - name: myapp
+        image: macintoshprime/hello-kubernetes:6e8f2751e4664593f13e520979922be00800ebe8
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
+        ports:
+        - containerPort: 8080
+          name: http
