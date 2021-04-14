@@ -3,9 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myhello-world-app
-  namespace: demo-app
-  annotations:
-    flux.weave.works/automated: "true"
+  namespace: no-repo-sync
 spec:
   selector:
     matchLabels:
