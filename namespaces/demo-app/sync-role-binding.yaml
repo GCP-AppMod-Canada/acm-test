@@ -1,0 +1,37 @@
+ kind: RoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: syncs-repo
+   namespace: demo-app
+ subjects:
+ - kind: ServiceAccount
+   name: ns-reconciler-demo-app
+   namespace: config-management-system
+ roleRef:
+   kind: ClusterRole
+   name: edit
+   apiGroup: rbac.authorization.k8s.io
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: istio-services
+  namespace: demo-app
+rules:
+  - apiGroups: ["networking.istio.io"]
+    resources: ["*"]
+    verbs: ["get","list","create","delete","patch"]
+---
+ kind: RoleBinding
+ apiVersion: rbac.authorization.k8s.io/v1
+ metadata:
+   name: syncs-repo-istio
+   namespace: demo-app
+ subjects:
+ - kind: ServiceAccount
+   name: ns-reconciler-demo-app
+   namespace: config-management-system
+ roleRef:
+   kind: Role
+   name: istio-services
+   apiGroup: rbac.authorization.k8s.io

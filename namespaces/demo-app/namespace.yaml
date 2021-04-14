@@ -1,0 +1,7 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: demo-app
+  labels:
+    owner: John-Doe
+    istio.io/rev: asm-192-1
