@@ -5,7 +5,7 @@ metadata:
   annotations:
     configmanagement.gke.io/cluster-selector: selector-env-prod
 spec:
-  enforcementAction: dryrun
+  enforcementAction: deny
   match:
     kinds:
       - apiGroups: ["extensions", "networking.k8s.io"]
