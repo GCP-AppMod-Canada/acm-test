@@ -4,3 +4,4 @@ metadata:
   name: falco-system
   labels:
     kind: security
+    owner: John-Doe    
