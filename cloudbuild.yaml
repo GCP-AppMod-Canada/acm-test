@@ -1,3 +1,2 @@
 steps:
 - name: 'northamerica-northeast1-docker.pkg.dev/service-nb-demo/nomos/nomos:latest'
-  args: ['vet', '--no-api-server-check']
