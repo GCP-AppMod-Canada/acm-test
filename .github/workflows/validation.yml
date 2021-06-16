@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: northamerica-northeast1-docker.pkg.dev/service-nb-demo/nomos/nomos-scan:latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,9 +28,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Nomos Vet
         run: |
-          echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-          curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
-          sudo apt-get update && sudo apt-get install google-cloud-sdk
-          gsutil cp gs://config-management-release/released/latest/linux_amd64/nomos nomos
-          chmod +x nomos
           ./nomos vet
