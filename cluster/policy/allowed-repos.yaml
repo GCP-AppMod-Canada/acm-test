@@ -8,7 +8,7 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo"]
+    excludedNamespaces: ["microservices-demo", "cloudrun-anthos"]
   parameters:
     repos:
       - "gcr.io"
