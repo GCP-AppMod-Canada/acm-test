@@ -1,0 +1,11 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: this-awesome-service
+  annotations:
+    configsync.gke.io/cluster-name-selector: demo-primary
+spec:
+  template:
+    spec:
+      containers:
+        - image: macintoshprime/hello-kubernetes:68dbcb57a43e1b9c9888b8163403a11f7a0edcb3
