@@ -1,6 +1,9 @@
 steps:
 - name: 'northamerica-northeast1-docker.pkg.dev/service-nb-demo/nomos/nomos:vet'
   args: ['vet', '--no-api-server-check', '--clusters', '""']
+# Grant read/write permissions to the workspace.
+- name: 'bash'
+  args: ['chmod', '777', '/workspace']  
 # Run nomos hydrate on the config-root directory and output the result into hydrated-configs.
 - name: 'gcr.io/config-management-release/nomos'
   args: ['nomos', 'hydrate', '--path', '.', '--output', '/workspace/hydrated-configs']
