@@ -4,11 +4,6 @@ steps:
 # Run nomos hydrate on the config-root directory and output the result into hydrated-configs.
 - name: 'gcr.io/config-management-release/nomos'
   args: ['nomos', 'hydrate', '--path', '.', '--output', '/workspace/hydrated-configs']
-  volumes:
-  - name: 'kube'
-    path: '/kube'
-  env:
-  - 'KUBECONFIG=/kube/config'
 # Recursively read a directory of kubernetes YAML configs from the workspace and output them as one list into config-source.yaml.
 - name: 'gcr.io/config-management-release/read-yaml'
   args: ['--input', '/dev/null', '-d', 'source_dir=/workspace/hydrated-configs', '--output', '/workspace/config-source.yaml']
