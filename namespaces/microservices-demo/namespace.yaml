@@ -4,4 +4,4 @@ metadata:
   name: microservices-demo
   labels:
     owner: John-Doe
-    istio.io/rev: asm-managed-rapid
+    istio.io/rev: asm-managed
