@@ -8,7 +8,7 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Namespace"]
-    excludedNamespaces: ["istio-system", "gke-system", "knative-serving","knative-eventing","cloud-run-events","cloud-run-system"]
+    excludedNamespaces: ["istio-system", "gke-system", "knative-serving","knative-eventing","cloud-run-events","cloud-run-system","asm-system"]
   parameters:
     labels:
       - key: "owner"
