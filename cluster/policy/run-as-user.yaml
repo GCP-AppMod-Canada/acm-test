@@ -8,7 +8,7 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo","istio-system","gke-system", "cloudrun-anthos"]
+    excludedNamespaces: ["microservices-demo","istio-system","gke-system", "cloudrun-anthos","asm-system"]
   parameters:
     runAsUser:
       rule: MustRunAsNonRoot # MustRunAsNonRoot # RunAsAny 

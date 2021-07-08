@@ -8,9 +8,10 @@ spec:
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo"]
+    excludedNamespaces: ["microservices-demo", "cloudrun-anthos"]
   parameters:
     repos:
       - "gcr.io"
       - "k8s.gcr.io"
       - "gke.gcr.io"
+      - "docker.io/falcosecurity"
