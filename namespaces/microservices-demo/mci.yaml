@@ -5,16 +5,16 @@ metadata:
   namespace: zoneprinter
     annotations:
       configsync.gke.io/cluster-name-selector: demo-primary
-spec:
-  template:
-    spec:
-      selector:
-        app: frontend
-      ports:
-      - name: web
-        protocol: TCP
-        port: 8080
-        targetPort: 8080
+  spec:
+    template:
+      spec:
+        selector:
+          app: frontend
+        ports:
+        - name: web
+          protocol: TCP
+          port: 8080
+          targetPort: 8080
 ---
 apiVersion: networking.gke.io/v1
 kind: MultiClusterIngress
@@ -23,9 +23,9 @@ metadata:
   namespace: zoneprinter
     annotations:
       configsync.gke.io/cluster-name-selector: demo-primary
-spec:
-  template:
-    spec:
-      backend:
-        serviceName: zone-mcs
-        servicePort: 8080
+  spec:
+    template:
+      spec:
+        backend:
+          serviceName: zone-mcs
+          servicePort: 8080
