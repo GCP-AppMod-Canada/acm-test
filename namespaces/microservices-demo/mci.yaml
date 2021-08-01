@@ -4,7 +4,7 @@ metadata:
   name: zone-mcs
   namespace: zoneprinter
   annotations:
-    configsync.gke.io/cluster-name-selector: demo-primary
+    configsync.gke.io/cluster-name-selector: selector-env-dev
 spec:
   template:
     spec:
@@ -22,7 +22,7 @@ metadata:
   name: zone-ingress
   namespace: zoneprinter
   annotations:
-    configsync.gke.io/cluster-name-selector: demo-primary
+    configsync.gke.io/cluster-name-selector: selector-env-dev
 spec:
   template:
     spec:
