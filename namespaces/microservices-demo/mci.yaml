@@ -4,7 +4,7 @@ metadata:
   name: zone-mcs
   namespace: microservices-demo
   annotations:
-    cconfigmanagement.gke.io/cluster-selector: selector-env-dev
+    configmanagement.gke.io/cluster-selector: selector-env-dev
 spec:
   template:
     spec:
