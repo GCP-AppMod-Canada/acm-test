@@ -4,7 +4,7 @@ metadata:
   name: zone-mcs
   namespace: microservices-demo
   annotations:
-    configsync.gke.io/cluster-name-selector: selector-env-dev
+    cconfigmanagement.gke.io/cluster-selector: selector-env-dev
 spec:
   template:
     spec:
@@ -22,7 +22,7 @@ metadata:
   name: zone-ingress
   namespace: microservices-demo
   annotations:
-    configsync.gke.io/cluster-name-selector: selector-env-dev
+    configmanagement.gke.io/cluster-selector: selector-env-dev
 spec:
   template:
     spec:
