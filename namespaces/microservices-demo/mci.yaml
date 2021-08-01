@@ -2,7 +2,7 @@ apiVersion: networking.gke.io/v1
 kind: MultiClusterService
 metadata:
   name: zone-mcs
-  namespace: zoneprinter
+  namespace: microservices-demo
   annotations:
     configsync.gke.io/cluster-name-selector: selector-env-dev
 spec:
@@ -20,7 +20,7 @@ apiVersion: networking.gke.io/v1
 kind: MultiClusterIngress
 metadata:
   name: zone-ingress
-  namespace: zoneprinter
+  namespace: microservices-demo
   annotations:
     configsync.gke.io/cluster-name-selector: selector-env-dev
 spec:
