@@ -5,3 +5,4 @@ metadata:
   labels:
     kind: security
     owner: John-Doe    
+    admission.gatekeeper.sh/ignore: true
