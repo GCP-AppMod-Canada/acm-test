@@ -251,6 +251,7 @@ data:
   WAVEFRONT_MINIMUMPRIORITY: "ZGVidWc="
 
   # WebUI Output
+  WEBUI_URL: "aHR0cDovL2ZhbGNvLWZhbGNvc2lkZWtpY2stdWk6MjgwMg=="
 ---
 # Source: falco/templates/configmap.yaml
 apiVersion: v1
@@ -1340,6 +1341,29 @@ subjects:
 - kind: ServiceAccount
   name: falco-falcosidekick
 ---
+# Source: falco/charts/falcosidekick/templates/service-ui.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: falco-falcosidekick-ui
+  namespace: falco-system
+  labels:
+    app.kubernetes.io/name: falcosidekick-ui
+    helm.sh/chart: falcosidekick-0.3.8
+    app.kubernetes.io/instance: falco-ui
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  ports:
+    - port: 2802
+         
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app.kubernetes.io/name: falcosidekick-ui
+    app.kubernetes.io/instance: falco-ui
+---
 # Source: falco/charts/falcosidekick/templates/service.yaml
 apiVersion: v1
 kind: Service
@@ -1498,6 +1522,61 @@ spec:
   updateStrategy:
     type: RollingUpdate
 ---
+# Source: falco/charts/falcosidekick/templates/deployment-ui.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: falco-falcosidekick-ui
+  namespace: falco-system
+  labels:
+    app.kubernetes.io/name: falcosidekick-ui
+    helm.sh/chart: falcosidekick-0.3.8
+    app.kubernetes.io/instance: falco-ui
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: falcosidekick-ui
+      app.kubernetes.io/instance: falco-ui
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: falcosidekick-ui
+        app.kubernetes.io/instance: falco-ui
+    spec:
+      securityContext:
+        runAsUser: 1234
+        fsGroup: 1234
+      containers:
+        - name: falcosidekick
+          image: "falcosecurity/falcosidekick-ui:v1.1.0"
+          imagePullPolicy: IfNotPresent
+          args:
+            - "-r"
+            - "200"
+          ports:
+            - name: http
+              containerPort: 2802
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          env:
+            # - name: RETENTION
+            #   value: "200"
+          resources:
+            {}
+---
 # Source: falco/charts/falcosidekick/templates/deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -1521,7 +1600,7 @@ spec:
         app.kubernetes.io/name: falcosidekick
         app.kubernetes.io/instance: falco
       annotations:
-        checksum/config: 11303ca9e0a7eef1a08bcee31e4152d00710e75efcd80ffef58faccfcc8aab33
+        checksum/config: 421cc1bc8d0c8b3410ae0fa6b136c10394b38ef48a745126797ab1ba5f38015b
     spec:
       serviceAccountName: falco-falcosidekick
       securityContext:
