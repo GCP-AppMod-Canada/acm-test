@@ -19,3 +19,4 @@ spec:
     - persistentVolumeClaim
     #- hostPath #required for allowedHostPaths
     - flexVolume #required for allowedFlexVolumes
+    - csi
