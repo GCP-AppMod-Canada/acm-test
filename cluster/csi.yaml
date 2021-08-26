@@ -61,7 +61,7 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: secrets-store-csi-driver
-  namespace: secret-csi
+  namespace: csi-driver
 ---
 # Source: secrets-store-csi-driver/templates/csidriver.yaml
 apiVersion: storage.k8s.io/v1
@@ -136,7 +136,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: csi-secrets-store-secrets-store-csi-driver-upgrade-crds
-    namespace: secret-csi
+    namespace: csi-driver
 roleRef:
   kind: ClusterRole
   name: csi-secrets-store-secrets-store-csi-driver-upgrade-crds
@@ -161,7 +161,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: csi-secrets-store-secrets-store-csi-driver-keep-crds
-    namespace: secret-csi
+    namespace: csi-driver
 roleRef:
   kind: ClusterRole
   name: csi-secrets-store-secrets-store-csi-driver-keep-crds
