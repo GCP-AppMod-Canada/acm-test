@@ -2,3 +2,5 @@ kind: Namespace
 apiVersion: v1
 metadata:
   name: secret-csi
+  labels:
+    owner: secrets  
