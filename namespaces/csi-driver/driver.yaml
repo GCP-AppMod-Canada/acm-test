@@ -207,7 +207,7 @@ metadata:
     helm.sh/hook-delete-policy: "hook-succeeded,before-hook-creation"
     helm.sh/hook-weight: "2"
 ---
-Source: secrets-store-csi-driver/templates/crds-upgrade-hook.yaml
+# Source: secrets-store-csi-driver/templates/crds-upgrade-hook.yaml
 apiVersion: batch/v1
 kind: Job
 metadata:
