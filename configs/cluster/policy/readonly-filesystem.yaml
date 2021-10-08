@@ -1,0 +1,11 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPReadOnlyRootFilesystem
+metadata:
+  name: psp-readonlyrootfilesystem
+spec:
+  enforcementAction: deny
+  match:
+    excludedNamespaces: ["microservices-demo", "istio-system", "gke-system", "cloudrun-anthos", "asm-system"]
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]

@@ -1,0 +1,64 @@
+apiVersion: rbac.authorization.k8s.io/v1
+# Source: falco/templates/clusterrole.yaml
+kind: ClusterRole
+metadata:
+  name: falco
+  labels:
+    app: falco
+    chart: "falco-1.15.1"
+    heritage: "Helm"
+    release: "falco"
+rules:
+  - resources:
+      - nodes
+      - namespaces
+      - pods
+      - replicationcontrollers
+      - replicasets
+      - services
+      - daemonsets
+      - deployments
+      - events
+      - configmaps
+    apiGroups:
+      - extensions
+      - ""
+    verbs:
+      - get
+      - list
+      - watch
+  - resources:
+      - daemonsets
+      - deployments
+      - replicasets
+      - statefulsets
+    apiGroups:
+      - apps
+    verbs:
+      - get
+      - list
+      - watch
+  - nonResourceURLs:
+      - /healthz
+      - /healthz/*
+    verbs:
+      - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+# Source: falco/templates/clusterrolebinding.yaml
+kind: ClusterRoleBinding
+metadata:
+  name: falco
+  labels:
+    app: falco
+    chart: "falco-1.15.1"
+    heritage: "Helm"
+    release: "falco"
+roleRef:
+  name: falco
+  kind: ClusterRole
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+  - name: falco
+    namespace: falco-system
+    kind: ServiceAccount

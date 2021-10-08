@@ -1,0 +1,17 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sAllowedRepos
+metadata:
+  name: allowed-repos
+spec:
+  enforcementAction: deny
+  match:
+    excludedNamespaces: ["microservices-demo", "cloudrun-anthos"]
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Pod"]
+  parameters:
+    repos:
+      - "gcr.io"
+      - "k8s.gcr.io"
+      - "gke.gcr.io"
+      - "docker.io/falcosecurity"

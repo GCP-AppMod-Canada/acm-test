@@ -1,0 +1,76 @@
+# Copyright 2020 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: secrets-store-csi-driver-provider-gcp
+  namespace: csi-driver
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: csi-secrets-store-provider-gcp
+  namespace: csi-driver
+  labels:
+    app: csi-secrets-store-provider-gcp
+spec:
+  selector:
+    matchLabels:
+      app: csi-secrets-store-provider-gcp
+  template:
+    metadata:
+      labels:
+        app: csi-secrets-store-provider-gcp
+    spec:
+      serviceAccountName: secrets-store-csi-driver-provider-gcp
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - name: provider
+          image: us-docker.pkg.dev/secretmanager-csi/secrets-store-csi-driver-provider-gcp/plugin@sha256:f2e84e7ae583ae048be54c8083fe6c2708116d540c5955b9ad732ac512d50dd4
+          env:
+            - name: TARGET_DIR
+              value: "/etc/kubernetes/secrets-store-csi-providers"
+          resources:
+            limits:
+              cpu: 50m
+              memory: 100Mi
+            requests:
+              cpu: 50m
+              memory: 100Mi
+          volumeMounts:
+            - name: providervol
+              mountPath: "/etc/kubernetes/secrets-store-csi-providers"
+            - name: mountpoint-dir
+              mountPath: /var/lib/kubelet/pods
+              mountPropagation: HostToContainer
+          livenessProbe:
+            failureThreshold: 3
+            httpGet:
+              port: 8095
+              path: /live
+            initialDelaySeconds: 5
+            periodSeconds: 30
+            timeoutSeconds: 10
+          imagePullPolicy: IfNotPresent
+      volumes:
+        - name: providervol
+          hostPath:
+            path: /etc/kubernetes/secrets-store-csi-providers
+        - name: mountpoint-dir
+          hostPath:
+            type: DirectoryOrCreate
+            path: /var/lib/kubelet/pods
+  updateStrategy:
+    type: RollingUpdate

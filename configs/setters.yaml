@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: setters
+data:
+  istio-rev: asm-1102-3
+  prod-selector: prod-env
+  project-id: gcp-project
+  anthos-baremetal: anthos-baremetal-clusters

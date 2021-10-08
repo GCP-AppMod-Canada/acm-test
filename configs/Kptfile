@@ -1,0 +1,10 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata:
+  name: acm-test
+info:
+  description: ACM Demo Repo
+pipeline:
+  mutators:
+    - image: gcr.io/kpt-fn/apply-setters:v0.2
+      configPath: setters.yaml
