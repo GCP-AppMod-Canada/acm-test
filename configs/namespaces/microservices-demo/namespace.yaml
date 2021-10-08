@@ -5,3 +5,4 @@ metadata:
   labels:
     istio.io/rev: asm-1102-3 # kpt-set: ${istio-rev}
     owner: John-Doe
+    istio.io/rev: asm-1104-6
