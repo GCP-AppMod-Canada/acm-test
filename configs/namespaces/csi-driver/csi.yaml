@@ -16,6 +16,8 @@ kind: ServiceAccount
 metadata:
   name: secrets-store-csi-driver-provider-gcp
   namespace: csi-driver
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal
 ---
 apiVersion: apps/v1
 kind: DaemonSet
@@ -24,6 +26,8 @@ metadata:
   namespace: csi-driver
   labels:
     app: csi-secrets-store-provider-gcp
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal
 spec:
   selector:
     matchLabels:

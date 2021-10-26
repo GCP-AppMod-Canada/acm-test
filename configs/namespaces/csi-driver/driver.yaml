@@ -11,6 +11,8 @@ metadata:
     app.kubernetes.io/name: "secrets-store-csi-driver"
     app.kubernetes.io/version: "0.2.0"
     helm.sh/chart: "secrets-store-csi-driver-0.2.0"
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal
 ---
 apiVersion: apps/v1
 # Source: secrets-store-csi-driver/templates/secrets-store-csi-driver.yaml

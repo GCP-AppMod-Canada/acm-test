@@ -6,3 +6,5 @@ metadata:
     kind: security
     admission.gatekeeper.sh/ignore: "true"
     owner: John-Doe
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal

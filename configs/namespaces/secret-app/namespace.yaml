@@ -4,3 +4,5 @@ metadata:
   name: secret-app
   labels:
     owner: secret
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal
