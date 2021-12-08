@@ -5,7 +5,7 @@ metadata:
 spec:
   enforcementAction: deny
   match:
+    excludedNamespaces: ["microservices-demo", "istio-system", "gke-system", "cloudrun-anthos", "asm-system", "gke-connect", "config-management-system"]
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo", "istio-system","gke-system", "cloudrun-anthos"]

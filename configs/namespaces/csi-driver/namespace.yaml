@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: csi-driver
+  labels:
+    kind: security
+    admission.gatekeeper.sh/ignore: "true"
+    owner: John-Doe
+  annotations:
+    configsync.gke.io/cluster-name-selector: baremetal

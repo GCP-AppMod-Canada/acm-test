@@ -5,12 +5,13 @@ metadata:
 spec:
   enforcementAction: deny
   match:
+    excludedNamespaces: ["microservices-demo", "cloudrun-anthos"]
     kinds:
       - apiGroups: [""]
         kinds: ["Pod"]
-    excludedNamespaces: ["microservices-demo"]
   parameters:
     repos:
       - "gcr.io"
       - "k8s.gcr.io"
       - "gke.gcr.io"
+      - "docker.io/falcosecurity"

@@ -5,10 +5,10 @@ metadata:
 spec:
   enforcementAction: deny
   match:
+    excludedNamespaces: ["istio-system", "gke-system", "knative-serving", "knative-eventing", "cloud-run-events", "cloud-run-system", "asm-system", "gke-connect"]
     kinds:
       - apiGroups: [""]
         kinds: ["Namespace"]
-    excludedNamespaces: ["istio-system", "gke-system", "knative-serving","knative-eventing","cloud-run-events","cloud-run-system"]
   parameters:
     labels:
       - key: "owner"

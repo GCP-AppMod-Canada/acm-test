@@ -1,5 +1,4 @@
-# Anthos Configuration Management Directory
+# Anthos Configuration Management Example W/ kpt
 
-This is the root directory for Anthos Configuration Management.
+This repo contains an example repo for Anthos Config Management.I put this repo together to help learn how to use ACM and I am now in the process of adding `kpt` to see how it can best be leveraged.
 
-See [our documentation](https://cloud.google.com/anthos-config-management/docs/repo) for how to use each subdirectory.
